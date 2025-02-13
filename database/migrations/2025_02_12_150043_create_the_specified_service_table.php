@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('the_specified_service', function (Blueprint $table) {
             $table->id();
-            $table->foreign('id_sessions')->references('id')->on('sessions')->onDelete('cascade');
+            $table->integer('id_seances');
+            $table->integer('id_service');
+            $table->foreign('id_seances')->references('id')->on('seances')->onDelete('cascade');
             $table->foreign('id_service')->references('id')->on('services')->onDelete('cascade');
         });
     }

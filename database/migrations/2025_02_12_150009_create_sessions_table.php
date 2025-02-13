@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sessions', function (Blueprint $table) {
+        Schema::create('seances', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_client');
+            $table->integer('id_cosmetologist');
             $table->foreign('id_client')->references('id')->on('clients')->onDelete('cascade');
-            $table->foreign('id_cosmetologist')->references('id')->on('cosmetologists')->onDelete('cascade');
+            $table->foreign('id_cosmetologist')->references('id')->on('cosmetologist')->onDelete('cascade');
             $table->dateTime('start_date_and_time');
             $table->dateTime('end_date_and_time');
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('seances');
     }
 };
