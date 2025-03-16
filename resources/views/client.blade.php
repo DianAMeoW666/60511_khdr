@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1>{{Список клиентов: .$}}</h1>
+    <h1>Список клиентов:</h1>
     <table border="clients">
         <thead>
         <tr>
