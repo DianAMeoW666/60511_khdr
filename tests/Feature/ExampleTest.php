@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Seance;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -10,10 +11,11 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
+    public function test_that_true_is_true()
+    {
+        $date = Seance::find(1);
+        print_r($date-> toArray());
+$this -> assertNotNull($date);
     }
 }
